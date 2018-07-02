@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 
     /// </summary>
-    public Vector2 speed = new Vector2(30, 30);
+    public Vector2 speed = new Vector2(0.1f, 0.1f);
 
     // 2 - Store the movement
     private Vector2 movement;
@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Physics2D.gravity = Vector2.zero;
+        speed.x = 5;
+        speed.y = 5;
     }
 
     void Update()
@@ -26,7 +28,8 @@ public class PlayerController : MonoBehaviour
         // 4 - Movement per direction
         movement = new Vector2(
           speed.x * inputX,
-          speed.y * inputY);
+          speed.y * inputY
+        );
     }
 
         // Update is called once per frame
